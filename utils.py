@@ -56,7 +56,7 @@ def load_train_data(image_path, gray_scale=True, is_testing=False):
     img_A, img_B, img_Out = np.atleast_3d(img_A, img_B, img_Out)
     img_AB_out = np.concatenate((img_A, img_B, img_Out), axis=2)
     return img_AB_out
-
+#학습을 위한 사진을 불러오는 함수입니다. 그런데 만약에 학습시에는 데이터 증강을 위해서 50% 확률로 좌우 반전합니다.
 
 def get_image(image_path,
               image_size,

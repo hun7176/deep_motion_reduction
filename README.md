@@ -75,7 +75,10 @@ bash train.sh configs/<your config file>.conf
    - 필터링된 feature `y`에 대해 Gaussian smoothing / Unsharp masking 선택 적용  
    - Ghosting 경계 완화 및 motion edge 유지  
 
+현재 코드는 Temporal mode에 맞게 수정되어 있기 때문에 static/dynamic mode(1,2번)을 수행하려면 직접 코드를 수정해야 합니다.
+
 ---
+
 
 ## 코드 수정 – Motion Suppression Loss
 ```python

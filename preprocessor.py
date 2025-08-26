@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 
 
-def preprocess_image(image, train_config):
+def preprocess_image(image, train_config): #학습과정에서 버퍼에 이미지를 넣기 전 전처리한다.
     pnoise = train_config["poisson_noise_n"]
     gnoise = train_config["gauss_noise_n"]
 
@@ -30,7 +30,7 @@ def get_gaussian_noise(image):
     return tf.random_normal(shape=tf.shape(image), mean=0.0, stddev=1.0)
 
 
-def preproc_poisson_noise(image, n):
+def preproc_poisson_noise(image, n): #푸아송 잡음을 추가한다.
     nn = np.random.uniform(0, n)
     return image + nn * get_possion_noise(image)
 

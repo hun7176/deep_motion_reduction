@@ -42,6 +42,8 @@ parser.add_argument('--filter_type', dest='filter_type', type=str,
 
 arguments = parser.parse_args()
 
+# 여기까지가 인자로 전달한 값들을 파싱해서 변수에 저장하는 부분입니다.
+# 값을 명시적으로 지정하지 않으면 기본값이 사용됩니다.
 
 def main(args):
     configspec = ConfigObj(args.config_spec, raise_errors=True)
@@ -50,15 +52,18 @@ def main(args):
                        raise_errors=True,
                        file_error=True)
     # Validate to get all the default values.
-    config.validate(Validator())
-    if not os.path.exists(config['exp_dir']):
+    config.validate(Validator()) 
+    #config파일을 2개 읽어오고, configspec을 통해서 유효성 검사를 합니다.
+
+
+    if not os.path.exists(config['exp_dir']): #conf파일에 있는 exp_dir을 확인한다.(학습된 모델 체크포인트 위치)
         # checkpoint directory.
         os.makedirs(os.path.join(config['exp_dir'], 'checkpoint'))
         # Tensorboard logs directory.
         os.makedirs(os.path.join(config['exp_dir'], 'logs'))
         # default output directory for this experiment.
         os.makedirs(os.path.join(config['exp_dir'], 'sample'))
-    network_type = config['architecture']['network_arch']
+    network_type = config['architecture']['network_arch'] #conf파일에 있는 [architecture]섹션에 있는 network_arch를 읽어온다. default는 ynet_3frames인데(y자 형태. 모션증폭에서 사용) 이거를 계
     exp_name = config['exp_name']
     setproctitle.setproctitle('{}_{}_{}' \
                               .format(args.phase, network_type, exp_name))
