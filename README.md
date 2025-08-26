@@ -12,13 +12,10 @@
 - **본 구현**: 움직임을 감쇠(α < 1) → 불필요한 모션 억제  
 
 연구 참여 기간 동안 발표한 슬라이드에서 모델 구조, 데이터 합성, Temporal 필터링 및 결과를 정리했습니다.  
-- Week 1 Report
-- Week 2 Report
-- Week 3 Report
-- Week 4 Report
+## Architecture
+![아키텍처](slide/slide1.png)
 
 ---
-
 ## ⚙️ 환경 설정 (Docker 권장)
 
 본 프로젝트는 **TensorFlow 1.15.5 GPU** 환경을 기준으로 작성되었습니다.  
