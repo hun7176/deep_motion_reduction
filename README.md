@@ -1,11 +1,6 @@
-# Learning-based Video Motion Magnification
+# Learning-based deep motion reduction
 
-Tensorflow implementation of Learning-based Video Motion Magnification. [\[Project page\]](https://people.csail.mit.edu/tiam/deepmag/) [\[Paper\]](https://arxiv.org/abs/1804.02684) [\[Data\]](https://groups.csail.mit.edu/graphics/deep_motion_mag/data/readme.txt)
-
-Collaborators: 
-\*(Tae-Hyun Oh, Ronnachai "Tiam" Jaroensri), Changil Kim, Mohamed A. Elgharib, Fr&eacute;do Durand, William T. Freeman, Wojciech Matusik
-
-\*Equal contribution.
+This code is Based on https://github.com/12dmodel/deep_motion_mag (MIT License)
 
 [Video demo]
 
