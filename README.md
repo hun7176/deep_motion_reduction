@@ -84,7 +84,7 @@ with tf.variable_scope('ynet_3frames/encoder', reuse=True):
     self.loss += train_config["texture_loss_weight"] * L1_loss(texture_c, self.texture_a)
     self.loss += train_config["shape_loss_weight"] * L1_loss(shape_c, self.shape_b)
 
-# Motion suppression loss
+# Motion suppression loss 추가!
 motion_suppression_loss = L1_loss(self.output, frameA) * 0.5
 self.loss += motion_suppression_loss
 ```
@@ -98,7 +98,7 @@ diff = enc_b - enc_a
 diff = (alpha - 1) * diff
 return enc_b + diff
 
-# 수정 방식 (역증폭)
+# 수정 방식 (역증폭) 변경!
 diff = enc_a - enc_b
 diff = (alpha - 1) * diff
 return enc_a + diff
