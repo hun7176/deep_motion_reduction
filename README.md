@@ -135,14 +135,15 @@ y_state.insert(0, y)
 ## 📊 결과 (Results)
 
 ### 정성적 결과 (Before vs After)
-- Before: 증폭 구조 그대로 사용 시, 감쇠 과정에서 ghosting 발생  
-- After: suppression/역증폭 + smoothing 적용 → **잔상 감소**, **안정화 개선**
+static mode
+- Before: 증폭 구조 그대로 사용 
+- After: suppression/역증폭 
+![Before](slide/baby.gif)
 
-예시 결과 (GIF 비교 예정):
-| Before (No Smoothing) | After (Motion Smoothing) |
-|-----------------------|--------------------------|
-| ![Before](images/before.gif) | ![After](images/after.gif) |
-
+dynamic mode
+- Before: 증폭 구조 그대로 사용 
+- After: suppression/역증폭 
+![Before](slide/pilot.gif)
 ---
 
 ## 📖 라이선스 & 출처
