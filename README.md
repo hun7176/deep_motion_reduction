@@ -138,18 +138,38 @@ y_state.insert(0, y)
 ## 📊 결과 (Results)
 
 ### 정성적 결과 (Before vs After)
-static mode
+static/dynamic mode
 - Before: 증폭 구조 그대로 사용 
 - After: suppression/역증폭 
 ![Before](slide/baby.gif)
 
-dynamic mode
+Temporal mode
 - Before: 증폭 구조 그대로 사용 
 - After: suppression/역증폭 
 ![Before](slide/pilot.gif)
 ---
 
+### Motion Smoothing Quantitative Result
+
+| 모델         | Motion Energy (↓ 낮을수록 좋음) | Optical Flow Magnitude (↓) |
+|--------------|-------------------------------|-----------------------------|
+| 기존 모델     | 5.1721                        | 1.3094                      |
+| 개선된 모델   | 1.0853                        | 0.2948                      |
+
+> **결과**: `motion energy`가 약 79% 감소, 평균 움직임 크기도 77% 감소
+
+---
+
+###  Ghosting 현상 및 PSNR/SSIM 비교
+
+| BPF | 후처리 | Ghosting 개선 | 시각적 변화 설명                | PSNR  | tSSIM   |
+|-----|--------|------------------|----------------------------------|-------|--------|
+| None | Smooth | ●●●●● | Ghosting이 많이 사라짐            | 21.1 | 0.9810 |
+| None | None  | ●      | Ghosting의 경계가 진함        | x | 0.9659 |
+> **결과**: feature map의 후처리를 통해 연속 프레임간 유사도를 올렸음.(smoothing)
+
 ## 📖 라이선스 & 출처
 - License: **MIT License** (레포 `LICENSE` 참조)  
 - Based on: [12dmodel/deep_motion_mag](https://github.com/12dmodel/deep_motion_mag) (MIT)  
 - 연구 배경/결과: 연구 참여 발표 슬라이드 (Week1~4)  
+- 비행사 훈련 영상 - 대한민국 공군 (https://youtu.be/OOIyagjLc_8?si=JPtKY0IGOFa6ITT7)
